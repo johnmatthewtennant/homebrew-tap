@@ -1,8 +1,8 @@
 class NotekitCli < Formula
   desc "CLI for Apple Notes via private NotesShared framework"
   homepage "https://github.com/johnmatthewtennant/notekit-cli"
-  url "https://github.com/johnmatthewtennant/notekit-cli/archive/refs/tags/v0.1.0.tar.gz"
-  sha256 "b542f569a0ca79ecc7b36a6a22c93fe47dc63bfc3c281a3ae14f8fe670c84526"
+  url "https://github.com/johnmatthewtennant/notekit-cli/archive/refs/tags/v0.2.0.tar.gz"
+  sha256 "6fe29d891f860e68d82ac113a20db387bf1f33f9baf76f0a5cf372d825d7a65e"
   license "MIT"
 
   depends_on :macos
@@ -13,6 +13,6 @@ class NotekitCli < Formula
   end
 
   test do
-    assert_match "Usage:", shell_output("#{bin}/notekit 2>&1", 1)
+    assert_match "notekit", shell_output("#{bin}/notekit help 2>&1")
   end
 end

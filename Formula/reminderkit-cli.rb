@@ -14,12 +14,18 @@ class ReminderkitCli < Formula
     bin.install "reminderkit"
 
     if build.with? "skill"
-      agents_dir = File.expand_path("~/.agents/skills/apple-reminders")
-      claude_dir = File.expand_path("~/.claude/skills/apple-reminders")
-      mkdir_p agents_dir
-      mkdir_p claude_dir
-      cp ".agents/skills/apple-reminders/SKILL.md", agents_dir
-      cp ".agents/skills/apple-reminders/SKILL.md", claude_dir
+      (share/"skill").install ".agents/skills/apple-reminders/SKILL.md"
+    end
+  end
+
+  def post_install
+    if (share/"skill/SKILL.md").exist?
+      agents_dir = Pathname.new(Dir.home)/".agents/skills/apple-reminders"
+      claude_dir = Pathname.new(Dir.home)/".claude/skills/apple-reminders"
+      agents_dir.mkpath
+      claude_dir.mkpath
+      cp share/"skill/SKILL.md", agents_dir/"SKILL.md"
+      cp share/"skill/SKILL.md", claude_dir/"SKILL.md"
     end
   end
 

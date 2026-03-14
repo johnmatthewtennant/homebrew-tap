@@ -15,12 +15,18 @@ class SwiftTranscribe < Formula
     bin.install ".build/release/transcribe"
 
     if build.with? "skill"
-      agents_dir = File.expand_path("~/.agents/skills/transcribe-audio")
-      claude_dir = File.expand_path("~/.claude/skills/transcribe-audio")
-      mkdir_p agents_dir
-      mkdir_p claude_dir
-      cp ".agents/skills/transcribe-audio/SKILL.md", agents_dir
-      cp ".agents/skills/transcribe-audio/SKILL.md", claude_dir
+      (share/"skill").install ".agents/skills/transcribe-audio/SKILL.md"
+    end
+  end
+
+  def post_install
+    if (share/"skill/SKILL.md").exist?
+      agents_dir = Pathname.new(Dir.home)/".agents/skills/transcribe-audio"
+      claude_dir = Pathname.new(Dir.home)/".claude/skills/transcribe-audio"
+      agents_dir.mkpath
+      claude_dir.mkpath
+      cp share/"skill/SKILL.md", agents_dir/"SKILL.md"
+      cp share/"skill/SKILL.md", claude_dir/"SKILL.md"
     end
   end
 

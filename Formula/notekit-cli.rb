@@ -19,13 +19,13 @@ class NotekitCli < Formula
   end
 
   def post_install
-    if (share/"skill/SKILL.md").exist?
-      agents_dir = Pathname.new(Dir.home)/".agents/skills/apple-notes"
-      claude_dir = Pathname.new(Dir.home)/".claude/skills/apple-notes"
-      agents_dir.mkpath
-      claude_dir.mkpath
-      cp share/"skill/SKILL.md", agents_dir/"SKILL.md"
-      cp share/"skill/SKILL.md", claude_dir/"SKILL.md"
+    skill_src = share/"skill/SKILL.md"
+    return unless skill_src.exist?
+
+    [".agents/skills/apple-notes", ".claude/skills/apple-notes"].each do |rel|
+      dest = Pathname.new(Dir.home)/rel
+      dest.mkpath
+      FileUtils.cp skill_src, dest/"SKILL.md"
     end
   end
 

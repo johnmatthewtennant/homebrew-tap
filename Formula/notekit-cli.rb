@@ -14,12 +14,18 @@ class NotekitCli < Formula
     bin.install "notekit"
 
     if build.with? "skill"
-      agents_dir = File.expand_path("~/.agents/skills/apple-notes")
-      claude_dir = File.expand_path("~/.claude/skills/apple-notes")
-      mkdir_p agents_dir
-      mkdir_p claude_dir
-      cp ".agents/skills/apple-notes/SKILL.md", agents_dir
-      cp ".agents/skills/apple-notes/SKILL.md", claude_dir
+      (share/"skill").install ".agents/skills/apple-notes/SKILL.md"
+    end
+  end
+
+  def post_install
+    if (share/"skill/SKILL.md").exist?
+      agents_dir = Pathname.new(Dir.home)/".agents/skills/apple-notes"
+      claude_dir = Pathname.new(Dir.home)/".claude/skills/apple-notes"
+      agents_dir.mkpath
+      claude_dir.mkpath
+      cp share/"skill/SKILL.md", agents_dir/"SKILL.md"
+      cp share/"skill/SKILL.md", claude_dir/"SKILL.md"
     end
   end
 

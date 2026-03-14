@@ -5,28 +5,11 @@ class NotekitCli < Formula
   sha256 "171033e5a961bccf187c7afa9d6a081ee0bf0cfa96a8a1ad0f731b862e7e0c99"
   license "MIT"
 
-  option "with-skill", "Install Claude Code skill"
-
   depends_on :macos
 
   def install
     system "make"
     bin.install "notekit"
-
-    if build.with? "skill"
-      (share/"skill").install ".agents/skills/apple-notes/SKILL.md"
-    end
-  end
-
-  def post_install
-    skill_src = share/"skill/SKILL.md"
-    return unless skill_src.exist?
-
-    [".agents/skills/apple-notes", ".claude/skills/apple-notes"].each do |rel|
-      dest = Pathname.new(Dir.home)/rel
-      dest.mkpath
-      FileUtils.cp skill_src, dest/"SKILL.md"
-    end
   end
 
   test do

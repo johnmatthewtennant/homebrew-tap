@@ -1,8 +1,8 @@
 class SwiftTranscribe < Formula
   desc "On-device speech-to-text CLI using Apple's SpeechAnalyzer"
   homepage "https://github.com/johnmatthewtennant/swift-transcribe"
-  url "https://github.com/johnmatthewtennant/swift-transcribe/archive/refs/tags/v0.1.0.tar.gz"
-  sha256 "8290ac40744d5bbd08221d997e389468c928f9845b49dc8ce0f2bd76b9169ff4"
+  url "https://github.com/johnmatthewtennant/swift-transcribe/archive/refs/tags/v0.2.0.tar.gz"
+  sha256 "78870baecd8e3ae7cc9e0d7c0a97f83587dd188caf6f914d887fbb00f93d5e7a"
   license "MIT"
 
   option "with-skill", "Install Claude Code skill"

@@ -10,6 +10,7 @@ class ReminderkitCli < Formula
   def install
     system "make"
     bin.install "reminderkit"
+    (prefix/".agents/skills/apple-reminders").install Dir[".agents/skills/apple-reminders/*"]
   end
 
   test do

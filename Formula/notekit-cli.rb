@@ -10,6 +10,7 @@ class NotekitCli < Formula
   def install
     system "make"
     bin.install "notekit"
+    (prefix/".agents/skills/apple-notes").install Dir[".agents/skills/apple-notes/*"]
   end
 
   test do

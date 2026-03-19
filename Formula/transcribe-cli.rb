@@ -8,7 +8,7 @@ class TranscribeCli < Formula
   depends_on :macos
 
   def install
-    system "make"
+    system "swift", "build", "-c", "release", "--disable-sandbox"
     bin.install ".build/release/transcribe"
   end
 

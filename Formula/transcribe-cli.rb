@@ -6,7 +6,6 @@ class TranscribeCli < Formula
   license "MIT"
 
   depends_on :macos
-  depends_on xcode: ["16.0", :build]
 
   def install
     system "make"

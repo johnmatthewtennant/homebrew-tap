@@ -1,8 +1,8 @@
 class TranscribeCli < Formula
   desc "On-device speech-to-text CLI using Apple's SpeechAnalyzer"
   homepage "https://github.com/johnmatthewtennant/transcribe-cli"
-  url "https://github.com/johnmatthewtennant/transcribe-cli/archive/refs/tags/v0.2.6.tar.gz"
-  sha256 "6f03a9907b92fc263a371a553a9d4dd87ec6b59baa143ae1a2c38bf95e7fa380"
+  url "https://github.com/johnmatthewtennant/transcribe-cli/archive/refs/tags/v0.2.7.tar.gz"
+  sha256 "033a4d0f7d227f63613cb866db5c88156b36076c962a3d57f0c9b004ca531329"
   license "MIT"
 
   depends_on :macos

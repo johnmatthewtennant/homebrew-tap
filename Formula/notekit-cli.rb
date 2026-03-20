@@ -1,8 +1,8 @@
 class NotekitCli < Formula
   desc "CLI for Apple Notes via private NotesShared framework"
   homepage "https://github.com/johnmatthewtennant/notekit-cli"
-  url "https://github.com/johnmatthewtennant/notekit-cli/archive/refs/tags/v0.5.39.tar.gz"
-  sha256 "bdffa243024baaf80a1c3e8b06a17f29db1ad6b0b30017b09ec31645dd956371"
+  url "https://github.com/johnmatthewtennant/notekit-cli/archive/refs/tags/v0.5.40.tar.gz"
+  sha256 "aaca11d5e346f0c616084086875369b74726c3a40c8f4729820416ed88409c49"
   license "MIT"
 
   depends_on :macos

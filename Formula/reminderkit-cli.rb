@@ -8,7 +8,7 @@ class ReminderkitCli < Formula
   depends_on :macos
 
   def install
-    system "make"
+    system "make", "VERSION=#{version}"
     bin.install "reminderkit"
     (prefix/".agents/skills/apple-reminders").install Dir[".agents/skills/apple-reminders/*"]
   end

@@ -8,7 +8,7 @@ class NotekitCli < Formula
   depends_on :macos
 
   def install
-    system "make"
+    system "make", "VERSION=#{version}"
     bin.install "notekit"
     (prefix/".agents/skills/apple-notes").install Dir[".agents/skills/apple-notes/*"]
   end

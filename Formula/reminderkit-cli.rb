@@ -1,8 +1,8 @@
 class ReminderkitCli < Formula
   desc "CLI for Apple Reminders via private ReminderKit framework"
   homepage "https://github.com/johnmatthewtennant/reminderkit-cli"
-  url "https://github.com/johnmatthewtennant/reminderkit-cli/archive/refs/tags/v0.5.56.tar.gz"
-  sha256 "8c94815717c6f3a8c4d259da0393b6dc51ffcfb9e32883c90e77b414eb496457"
+  url "https://github.com/johnmatthewtennant/reminderkit-cli/archive/refs/tags/v0.5.57.tar.gz"
+  sha256 "17c5df59a1012a4424dba824213dd31a82f6db5ba93bec402db89f1384e9eb80"
   license "MIT"
 
   depends_on :macos
